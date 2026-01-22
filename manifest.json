@@ -1,1 +1,45 @@
-这是PWA配置文件
+// sw.js - 俄语拼读助手缓存逻辑
+const CACHE_NAME = 'russian-phonics-v1';
+const AUDIO_CACHE_NAME = 'russian-audio-v1';
+
+// 1. 预缓存基础资源 (HTML, CSS, JS, Fonts)
+const PRE_CACHE_ASSETS = [
+  '/',
+  '/index.html',
+  '/css/style.css',
+  '/js/app.js',
+  '/assets/fonts/CharisSIL-Regular.woff2',
+  '/manifest.json'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(PRE_CACHE_ASSETS))
+  );
+});
+
+// 2. 拦截请求：实现音频文件的运行时缓存 (Cache First)
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+
+  // 如果请求的是 MP3 音频文件
+  if (url.pathname.endsWith('.mp3')) {
+    event.respondWith(
+      caches.open(AUDIO_CACHE_NAME).then(cache => {
+        return cache.match(event.request).then(response => {
+          // 如果缓存中有，直接返回；否则联网下载并存入缓存
+          return response || fetch(event.request).then(networkResponse => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+        });
+      })
+    );
+  } else {
+    // 普通资源采用 Cache First, Falling back to Network
+    event.respondWith(
+      caches.match(event.request).then(response => response || fetch(event.request))
+    );
+  }
+});
+// 这是PWA配置文件
