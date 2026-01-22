@@ -1,0 +1,38 @@
+{
+  "app_config": {
+    "name": "Russian Phonics",
+    "font": "Charis SIL",
+    "assets_path": "https://your-username.github.io/russian-app/assets/"
+  },
+  "alphabet": [
+    {
+      "id": "02",
+      "letter": "Б б",
+      "name": { "ipa": "[bɛ]", "audio": "audio/names/02.mp3" },
+      "phonetic": {
+        "type": "paired", // matched hard/soft
+        "hard": { "ipa": "[b]", "audio": "audio/sounds/02_h.mp3" },
+        "soft": { "ipa": "[bʲ]", "audio": "/audio/sounds/02_s.mp3" }
+      },
+      "examples": [
+        { "text": "ба́бушка", "ipa": "[ˈbabʊʂkə]", "trans": "奶奶", "audio": "audio/w/babushka.mp3" },
+        { "text": "биле́т", "ipa": "[bʲɪˈlʲet]", "trans": "票", "audio": "audio/w/bilet.mp3" }
+      ]
+    }
+  ],
+  "rules_encyclopedia": [
+    {
+      "cat": "元音弱化",
+      "rules": [
+        {
+          "title": "O的弱化",
+          "desc": "非重音节读作[a]",
+          "examples": [
+            { "text": "окно́", "ipa": "[akˈno]", "trans": "窗户", "audio": "audio/w/okno.mp3" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+///这是assets中数据结构样例
