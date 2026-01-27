@@ -1,34 +1,74 @@
 {
-  "app_config": {
-    "name": "Russian Phonics",
-    "font": "Charis SIL",
-    "assets_path": "https://your-username.github.io/russian-app/assets/"
+  "app_info": {
+    "name": "俄语拼读助手",
+    "version": "3.0",
+    "audio_base_path": "assets/audio/",
+    "font_family": "Charis SIL"
   },
   "alphabet": [
     {
-      "id": "02",
-      "letter": "Б б",
-      "name": { "ipa": "[bɛ]", "audio": "audio/names/02.mp3" },
-      "phonetic": {
-        "type": "paired", // matched hard/soft
-        "hard": { "ipa": "[b]", "audio": "audio/sounds/02_h.mp3" },
-        "soft": { "ipa": "[bʲ]", "audio": "/audio/sounds/02_s.mp3" }
-      },
-      "examples": [
-        { "text": "ба́бушка", "ipa": "[ˈbabʊʂkə]", "trans": "奶奶", "audio": "audio/w/babushka.mp3" },
-        { "text": "биле́т", "ipa": "[bʲɪˈlʲet]", "trans": "票", "audio": "audio/w/bilet.mp3" }
-      ]
-    }
-  ],
-  "rules_encyclopedia": [
-    {
-      "cat": "元音弱化",
-      "rules": [
+      "id": "01",
+      "char_upper": "А",
+      "char_lower": "а",
+      "type": "vowel",
+      "name_ipa": "[a]",
+      "name_audio": "01_A_name.mp3",
+      "phonetics": [
         {
-          "title": "O的弱化",
-          "desc": "非重音节读作[a]",
+          "attr_id": "V", 
+          "description": "基础元音",
+          "ipa": "[a]",
+          "sound_audio": "01_A_V_sound.mp3",
           "examples": [
-            { "text": "окно́", "ipa": "[akˈno]", "trans": "窗户", "audio": "audio/w/okno.mp3" }
+            { "text": "А́нна", "ipa": "[ˈanːə]", "translation": "安娜", "audio": "01_A_V_ex1.mp3" },
+            { "text": "А́втобус", "ipa": "[ɐfˈtobʊs]", "translation": "公交车", "audio": "01_A_V_ex2.mp3" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "char_upper": "Б",
+      "char_lower": "б",
+      "type": "consonant",
+      "name_ipa": "[bɛ]",
+      "name_audio": "02_B_name.mp3",
+      "phonetics": [
+        {
+          "attr_id": "HV",
+          "description": "硬浊音",
+          "ipa": "[b]",
+          "sound_audio": "02_B_HV_sound.mp3",
+          "examples": [
+            { "text": "Бог", "ipa": "[box]", "translation": "上帝", "audio": "02_B_HV_ex1.mp3" },
+            { "text": "Бага́ж", "ipa": "[bɐˈɡaʂ]", "translation": "行李", "audio": "02_B_HV_ex2.mp3" }
+          ]
+        },
+        {
+          "attr_id": "HF",
+          "description": "硬清音",
+          "ipa": "[p]",
+          "sound_audio": "02_B_HF_sound.mp3",
+          "examples": [
+            { "text": "Дуб", "ipa": "[dup]", "translation": "橡树", "audio": "02_B_HF_ex1.mp3" }
+          ]
+        },
+        {
+          "attr_id": "SV",
+          "description": "软浊音",
+          "ipa": "[bʲ]",
+          "sound_audio": "02_B_SV_sound.mp3",
+          "examples": [
+            { "text": "Бит", "ipa": "[bʲit]", "translation": "比特", "audio": "02_B_SV_ex1.mp3" }
+          ]
+        },
+        {
+          "attr_id": "SF",
+          "description": "软清音",
+          "ipa": "[pʲ]",
+          "sound_audio": "02_B_SF_sound.mp3",
+          "examples": [
+            { "text": "Зябь", "ipa": "[zʲapʲ]", "translation": "初寒", "audio": "02_B_SF_ex1.mp3" }
           ]
         }
       ]
