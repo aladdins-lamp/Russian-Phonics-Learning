@@ -5,7 +5,9 @@
     "audio_base_path": "assets/audio/",
     "font_family": "Charis SIL"
   },
-  "alphabet": [  // 这是assets中数据结构样例
+
+  // 这是assets中数据结构样例
+  "alphabet": [  
     {
       "id": "01",
       "char_upper": "А",
