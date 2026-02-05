@@ -1,11 +1,11 @@
 {
   "app_info": {
-    "name": "俄语拼读助手",
+    "name": "俄语拼读助手",  
     "version": "3.0",
     "audio_base_path": "assets/audio/",
     "font_family": "Charis SIL"
   },
-  "alphabet": [
+  "alphabet": [  // 这是assets中数据结构样例
     {
       "id": "01",
       "char_upper": "А",
@@ -75,4 +75,3 @@
     }
   ]
 }
-// 这是assets中数据结构样例
