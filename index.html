@@ -1,11 +1,15 @@
 <head>
-  <link rel="manifest" href="manifest.json">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
-</head>  
+    <meta charset="UTF-8">
+    <title>俄语拼读助手</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+</head>
 <body>
     <header>
         <h1>俄语拼读助手</h1>
