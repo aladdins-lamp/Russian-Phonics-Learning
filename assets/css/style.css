@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'Charis SIL';
+    src: url('../fonts/CharisSIL-Regular.woff2') format('woff2');
+}
+.ipa { font-family: 'Charis SIL', sans-serif; color: #1976d2; }
